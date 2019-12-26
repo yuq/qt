@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Road.qml</file>
+        <file>SceneRoot.qml</file>
+    </qresource>
+</RCC>
