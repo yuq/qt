@@ -78,9 +78,15 @@ Entity {
         }
 
         ShaderProgram {
-            id: shader
-            vertexShaderCode: loadSource("qrc:/point.vert")
-            fragmentShaderCode: loadSource("qrc:/point.frag")
+            id: gles_shader
+            vertexShaderCode: loadSource("qrc:/gles/point.vert")
+            fragmentShaderCode: loadSource("qrc:/gles/point.frag")
+        }
+
+        ShaderProgram {
+            id: gl_shader
+            vertexShaderCode: loadSource("qrc:/gl/point.vert")
+            fragmentShaderCode: loadSource("qrc:/gl/point.frag")
         }
 
         effect: Effect {
@@ -94,7 +100,27 @@ Entity {
                         minorVersion: 0
                     }
                     renderPasses: RenderPass {
-                        shaderProgram: shader
+                        shaderProgram: gles_shader
+                        renderStates: [
+                            BlendEquationArguments {
+                                sourceRgb: BlendEquationArguments.SourceAlpha
+                                destinationRgb: BlendEquationArguments.OneMinusSourceAlpha
+                                sourceAlpha: BlendEquationArguments.Zero
+                                destinationAlpha: BlendEquationArguments.One
+                            }
+                        ]
+                    }
+                },
+                Technique {
+                    filterKeys: [forward]
+                    graphicsApiFilter {
+                        api: GraphicsApiFilter.OpenGL
+                        profile: GraphicsApiFilter.CoreProfile
+                        majorVersion: 3
+                        minorVersion: 3
+                    }
+                    renderPasses: RenderPass {
+                        shaderProgram: gl_shader
                         renderStates: [
                             BlendEquationArguments {
                                 sourceRgb: BlendEquationArguments.SourceAlpha
