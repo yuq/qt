@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
     QSurfaceFormat fmt;
-#if 0
+#if 1
     fmt.setRenderableType(QSurfaceFormat::RenderableType::OpenGLES);
     fmt.setVersion(3, 0);
 #else

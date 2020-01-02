@@ -8,16 +8,20 @@ Entity {
 
     Buffer {
         id: vertexBuffer
-
         type: Buffer.VertexBuffer
-        accessType: Buffer.Write
-        usage: Buffer.StaticDraw
-
         data: new Float32Array([
              1, -1, 0,
              1,  1, 0,
             -1, -1, 0,
             -1,  1, 0,
+        ])
+    }
+
+    Buffer {
+        id: indexBuffer
+        type: Buffer.IndexBuffer
+        data: new Uint8Array([
+            0, 1, 2, 3
         ])
     }
 
@@ -37,6 +41,11 @@ Entity {
                     byteOffset: 0
                     byteStride: 3 * 4
                     buffer: vertexBuffer
+                },
+                Attribute {
+                    attributeType: Attribute.IndexAttribute
+                    vertexBaseType: Attribute.UnsignedByte
+                    buffer: indexBuffer
                     count: 4
                 }
             ]
