@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>point.vert</file>
+        <file>point.frag</file>
+    </qresource>
+</RCC>
