@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>model.vert</file>
+        <file>model.frag</file>
+        <file>blur.vert</file>
+        <file>blur.frag</file>
+        <file>combine.vert</file>
+        <file>combine.frag</file>
+    </qresource>
+</RCC>

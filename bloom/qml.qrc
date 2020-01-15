@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>BloomFrameGraph.qml</file>
+        <file>SceneRoot.qml</file>
+        <file>Model.qml</file>
+        <file>Bloom.qml</file>
+    </qresource>
+</RCC>
